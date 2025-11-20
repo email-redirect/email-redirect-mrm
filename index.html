@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="refresh" content="0;url=mailto:mbe23911@gmail.com">
-  </head>
-  <body>
-    <a href="mailto:mbe23911@gmail.com">Kliknij tutaj aby napisać maila</a>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <title>Auto Mail</title>
+    <script>
+        function start() {
+            // Otwiera mailto
+            window.location.href = "mailto:jakiegos@mail.com";
+
+            // Po 100 ms próbuje zamknąć stronę
+            setTimeout(() => {
+                window.open('', '_self', '');
+                window.close();
+            }, 100);
+        }
+    </script>
+</head>
+<body onload="start()">
+</body>
 </html>
