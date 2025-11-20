@@ -5,14 +5,19 @@
     <title>Auto Mail</title>
     <script>
         function start() {
-            // Otwiera mailto
-            window.location.href = "mailto:maciussus@gmail.com";
+            // Otwiera nową kartę
+            const newTab = window.open('', '_blank');
 
-            // Po 100 ms próbuje zamknąć stronę
-            setTimeout(() => {
-                window.open('', '_self', '');
-                window.close();
-            }, 100);
+            // W nowej karcie wykonujemy mailto + zamknięcie
+            newTab.document.write(`
+                <script>
+                    window.location.href = "mailto:jakiegos@mail.com";
+                    setTimeout(() => {
+                        window.open('', '_self', '');
+                        window.close();
+                    }, 100);
+                <\/script>
+            `);
         }
     </script>
 </head>
