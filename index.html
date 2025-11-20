@@ -2,16 +2,19 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Auto Mail</title>
+    <title>Auto Gmail</title>
     <script>
         function start() {
-            // Otwiera nową kartę
+            const gmailUrl =
+                "https://mail.google.com/mail/?view=cm&fs=1&to=maciussus@gmail.com&su=&body=";
+
+            // otwarcie nowej karty
             const newTab = window.open('', '_blank');
 
-            // W nowej karcie wykonujemy mailto + zamknięcie
+            // wygenerowanie kodu w nowej karcie
             newTab.document.write(`
                 <script>
-                    window.location.href = "mailto:jakiegos@mail.com";
+                    window.location.href = "${gmailUrl}";
                     setTimeout(() => {
                         window.open('', '_self', '');
                         window.close();
